@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MessageModule } from './reactive-data-service/message.module';
+import { ReactiveDataServiceModule } from './reactive-data-service/message.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { MessageModule } from './reactive-data-service/message.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MessageModule
+    ReactiveDataServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

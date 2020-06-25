@@ -12,4 +12,4 @@ import { MessageComponent } from './message.component';
     CommonModule
   ]
 })
-export class MessageModule { }
+export class ReactiveDataServiceModule { }
