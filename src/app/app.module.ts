@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
+import { NgxsModule } from './ngxs/ngxs.module';
 import { ReactiveDataServiceModule } from './reactive-data-service/message.module';
 
 @NgModule({
@@ -11,7 +13,9 @@ import { ReactiveDataServiceModule } from './reactive-data-service/message.modul
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveDataServiceModule
+    ReactiveDataServiceModule,
+    NgxsModule,
+    NgxsDataModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
