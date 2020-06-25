@@ -1,8 +1,24 @@
-div.content {
+div.wrapper {
   padding: 5px;
   border: 2px solid black
 }
 
-div.message {
+div.title {
   padding: 10px;
+  font-weight: bold;
+}
+
+div.message {
+  font-weight: bold;
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+}
+
+div.content {
+  padding: 10px;
+}
+
+div.action {
+  padding: 10px 0;
 }

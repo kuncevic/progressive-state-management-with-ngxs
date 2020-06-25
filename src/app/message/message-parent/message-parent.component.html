@@ -1,9 +1,14 @@
-<div class="content">
-  <app-message-child></app-message-child>
-  <div class="message">
-    <div>
-      {{ message$ | async }}
-    </div>
-    <button (click)="sendMessage()">Send Hello From Parent</button>
+<div class="wrapper">
+  <div class="title">
+    This is parent 👨
   </div>
+  <div class="content">
+    <div class="message">
+      👉 {{ message$ | async }}
+    </div>
+     <div class="action">
+      <button (click)="sendMessage()">Hello From Parent</button>
+    </div>
+  </div>
+  <app-message-child></app-message-child>
 </div>

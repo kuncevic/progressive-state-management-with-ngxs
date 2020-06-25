@@ -1,9 +1,13 @@
-<div class="content">
-  <div class="message">
-    <div>
-      {{ message$ | async }}
+<div class="wrapper">
+  <div class="title">
+    This is child 👶
+  </div>
+  <div class="content">
+    <div class="message">
+      👉 {{ message$ | async }}
     </div>
-
-    <button (click)="sendMessage()">Send Hello From Child</button>
+    <div class="action">
+      <button (click)="sendMessage()">Hello From Child</button>
+    </div>
   </div>
 </div>

@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { ReactiveStore } from '../reactive-store';
 
-interface Count {
+interface Message {
   message: string;
 }
 
-const initialMessage: Count = { message: '42' };
+const initialMessage: Message = { message: '42' };
 
 @Injectable({
   providedIn: 'root',
 })
-export class MessageStore extends ReactiveStore<Count> {
+export class MessageStore extends ReactiveStore<Message> {
   constructor() {
     super(initialMessage);
   }
