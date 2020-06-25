@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MessageComponent } from './message/message.component';
+import { MessageComponent } from './reactive-data-service/message.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/message', pathMatch: 'full' },
-  { path: 'message', component: MessageComponent },
+  { path: '', redirectTo: '/reactive-data-service', pathMatch: 'full' },
+  { path: 'reactive-data-service', component: MessageComponent },
 ];
 
 @NgModule({

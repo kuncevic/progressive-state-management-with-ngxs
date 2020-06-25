@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { MessageStore } from '../message-store.service';
+import { MessageStore } from '../services/message-store.service';
 
 @Component({
   selector: 'app-message-parent',

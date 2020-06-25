@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MessageParentComponent } from './message-parent/message-parent.component';
 import { MessageChildComponent } from './message-child/message-child.component';
+import { MessageParentComponent } from './message-parent/message-parent.component';
 import { MessageComponent } from './message.component';
 
 

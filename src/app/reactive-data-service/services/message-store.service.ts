@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReactiveStore } from '../reactive-store';
+import { ReactiveStore } from './reactive-store';
 
 interface Message {
   message: string;
