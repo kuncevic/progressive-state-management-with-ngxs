@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MessageParentComponent } from './message/message-parent/message-parent.component';
+import { MessageComponent } from './message/message.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/message', pathMatch: 'full' },
-  { path: 'message', component: MessageParentComponent },
+  { path: 'message', component: MessageComponent },
 ];
 
 @NgModule({
