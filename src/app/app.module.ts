@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
 import { NgxsModule } from './ngxs/ngxs.module';
-import { ReactiveDataServiceModule } from './reactive-data-service/message.module';
+import { ReactiveDataServiceModule } from './reactive-data-service/reactive-data-service.module';
 
 @NgModule({
   declarations: [

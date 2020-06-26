@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MessageChildComponent } from './message-child/message-child.component';
-import { MessageParentComponent } from './message-parent/message-parent.component';
-import { NgxsMessageComponent } from './ngxs-message.component';
+import { MessageComponent } from './child/child.component';
+import { NgxsComponent } from './ngxs.component';
+import { ParentComponent } from './parent/parent.component';
 
 
 
 @NgModule({
-  declarations: [MessageChildComponent, MessageParentComponent, NgxsMessageComponent],
+  declarations: [MessageComponent, ParentComponent, NgxsComponent],
   imports: [
     CommonModule
   ]
