@@ -5,14 +5,14 @@ interface Counter {
   number: number;
 }
 
-const initialMessage: Counter = { number: 0 };
+const initialState: Counter = { number: 0 };
 
 @Injectable({
   providedIn: 'root',
 })
-export class MessageStore extends ReactiveStore<Counter> {
+export class CounterStore extends ReactiveStore<Counter> {
   constructor() {
-    super(initialMessage);
+    super(initialState);
   }
 
   public setCounter(value: number): void {
@@ -20,6 +20,6 @@ export class MessageStore extends ReactiveStore<Counter> {
   }
 
   public reset(): void {
-    this.setState(initialMessage);
+    this.setState(initialState);
   }
 }

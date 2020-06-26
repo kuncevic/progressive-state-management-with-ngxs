@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
@@ -13,7 +15,10 @@ import { ReactiveDataServiceModule } from './reactive-data-service/reactive-data
     AppRoutingModule,
     ReactiveDataServiceModule,
     NgxsStoreModule,
-    NgxsDataModule
+    NgxsDataModule,
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

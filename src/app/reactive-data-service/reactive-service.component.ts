@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageStore } from './services/store.service';
+import { CounterStore } from './services/store.service';
 
 @Component({
   selector: 'app-reactive-service',
@@ -7,11 +7,11 @@ import { MessageStore } from './services/store.service';
   styleUrls: ['./reactive-service.component.scss'],
 })
 export class ReactiveServiceComponent implements OnInit {
-  constructor(private messageStore: MessageStore) {}
+  constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {}
 
   resetMessage(): void {
-    this.messageStore.reset();
+    this.counterStore.reset();
   }
 }

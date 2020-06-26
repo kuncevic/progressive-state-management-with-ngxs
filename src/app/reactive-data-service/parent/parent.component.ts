@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { MessageStore } from '../services/store.service';
+import { CounterStore } from '../services/store.service';
 
 @Component({
   selector: 'app-parent',
@@ -8,14 +8,14 @@ import { MessageStore } from '../services/store.service';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
-  message$;
-  constructor(private messageStore: MessageStore) {}
+  number$;
+  constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {
-    this.message$ = this.messageStore.state$.pipe(map((x) => x.number));
+    this.number$ = this.counterStore.state$.pipe(map((x) => x.number));
   }
 
   setCounter(value): void {
-    this.messageStore.setCounter(value);
+    this.counterStore.setCounter(value);
   }
 }

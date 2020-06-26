@@ -1,1 +1,14 @@
-<app-child></app-child>
+<div class="wrapper">
+    <div class="title">
+      This is Parent 👉 👨
+    </div>
+    <div class="content">
+      <div class="message">
+        👋 {{ count$ | async }}
+      </div>
+        <div class="action">
+        <button (click)="setCounter(1)">+1</button>
+      </div>
+    </div>
+    <app-child></app-child>
+  </div>
