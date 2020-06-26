@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgxsComponent } from './ngxs.component';
+import { NgxsComponent } from './ngxs-store.component';
 
 
 describe('NgxsComponent', () => {
