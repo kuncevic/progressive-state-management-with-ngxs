@@ -1,14 +1,13 @@
 <div class="wrapper">
-  <div class="title">
-    Parent 👉 👨
-  </div>
-  <div class="content">
-    <div class="message">
-      👋 {{ counter.snapshot.number }}
+    <div class="title">
+      Parent 👨
     </div>
+    <div class="content">
       <div class="action">
-      <button (click)="counter.setCounter(1)">+1</button>
+        <button (click)="counter.setValue1(-1)">-1</button>
+        <span class="value"> {{ counter.snapshot.value1 }}</span>
+        <button (click)="counter.setValue1(1)">+1</button>
+      </div>
     </div>
+    <app-child></app-child>
   </div>
-  <app-child></app-child>
-</div>
