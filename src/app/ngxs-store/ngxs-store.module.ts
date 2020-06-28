@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { NgxsModule } from '@ngxs/store';
 import { ChildComponent } from './child/child.component';
 import { LittleChildComponent } from './little-child/little-child.component';
@@ -13,6 +14,7 @@ import { CounterState } from './state/counter.state';
   declarations: [ChildComponent, ParentComponent, NgxsComponent, LittleChildComponent],
   imports: [
     CommonModule,
+    RouterModule,
     NgxsModule.forFeature([CounterState]),
   ],
 })
