@@ -3,11 +3,11 @@ import { map } from 'rxjs/operators';
 import { CounterStore } from '../services/store.service';
 
 @Component({
-  selector: 'app-inner-child',
-  templateUrl: './inner-child.component.html',
-  styleUrls: ['./inner-child.component.scss'],
+  selector: 'app-little-child',
+  templateUrl: './little-child.component.html',
+  styleUrls: ['./little-child.component.scss'],
 })
-export class InnerChildComponent implements OnInit {
+export class LittleChildComponent implements OnInit {
   value$;
   constructor(private counterStore: CounterStore) {}
 
