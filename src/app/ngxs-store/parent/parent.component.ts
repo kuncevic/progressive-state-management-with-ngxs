@@ -17,6 +17,9 @@ export class ParentComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.count$.subscribe(() => {
+      console.log(0)
+    })
   }
 
   setCounter(value: number): void {

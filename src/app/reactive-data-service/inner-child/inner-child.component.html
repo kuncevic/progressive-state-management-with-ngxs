@@ -1,14 +1,13 @@
 <div class="wrapper">
   <div class="title">
-    Parent 👨
+    Inner Child 👶
   </div>
   <div class="content">
-
-      <div class="action">
+    <div class="action">
         <button (click)="increaseValue(-1)">-1</button>
         <span class="value"> {{ value$ | async }}</span>
         <button (click)="decreaseValue(1)">+1</button>
     </div>
   </div>
-  <app-child></app-child>
 </div>
+

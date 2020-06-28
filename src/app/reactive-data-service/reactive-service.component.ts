@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { CounterStore } from './services/store.service';
 
 @Component({
@@ -7,9 +8,12 @@ import { CounterStore } from './services/store.service';
   styleUrls: ['./reactive-service.component.scss'],
 })
 export class ReactiveServiceComponent implements OnInit {
+  sum$;
   constructor(private counterStore: CounterStore) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sum$ = this.counterStore.state$.pipe(map((x) => x.sum));
+  }
 
   resetMessage(): void {
     this.counterStore.reset();

@@ -1,2 +1,7 @@
-<app-parent></app-parent>
- <button (click)="resetMessage()">Reset</button>
+<div class="wrapper">
+  <div class="title">
+    Container 🌳
+  </div>
+  <app-parent></app-parent>
+  <button (click)="resetMessage()">Reset</button><span class="value">{{ sum$ | async }}</span>
+</div>

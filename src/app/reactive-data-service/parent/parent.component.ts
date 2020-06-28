@@ -8,14 +8,17 @@ import { CounterStore } from '../services/store.service';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
-  number$;
+  value$;
   constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {
-    this.number$ = this.counterStore.state$.pipe(map((x) => x.number));
+    this.value$ = this.counterStore.state$.pipe(map((x) => x.value1));
   }
 
-  setCounter(value): void {
-    this.counterStore.setCounter(value);
+  increaseValue(value): void {
+    this.counterStore.setValue1(value);
+  }
+  decreaseValue(value): void {
+    this.counterStore.setValue1(value);
   }
 }

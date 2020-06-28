@@ -1,13 +1,13 @@
 <div class="wrapper">
   <div class="title">
-    This is Child 👉 👶
+    Child 👦
   </div>
   <div class="content">
-    <div class="message">
-      👋 {{ number$ | async }}
-    </div>
     <div class="action">
-      <button (click)="setCounter(-1)">-1</button>
+        <button (click)="increaseValue(-1)">-1</button>
+        <span class="value"> {{ value$ | async }}</span>
+        <button (click)="decreaseValue(1)">+1</button>
     </div>
   </div>
+  <app-inner-child></app-inner-child>
 </div>

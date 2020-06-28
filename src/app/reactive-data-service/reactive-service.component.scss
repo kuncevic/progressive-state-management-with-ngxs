@@ -1,3 +1,13 @@
+div.wrapper {
+  padding: 5px;
+  border: 2px solid violet
+}
+
+div.title {
+  padding: 10px 0 0 10px;
+  font-weight: bold;
+}
+
 ::ng-deep button {
   border: 1px solid #0066cc;
   background-color: #0099cc;
@@ -7,4 +17,14 @@
   cursor: pointer;
   font-weight: bold;
   font-size: large;
+}
+
+span.value {
+  font-weight: bold;
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+  width: 55px;
+  display: inline-block;
+  text-align: center;
 }
