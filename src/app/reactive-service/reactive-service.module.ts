@@ -13,4 +13,4 @@ import { ReactiveServiceComponent } from './reactive-service.component';
     CommonModule
   ]
 })
-export class ReactiveDataServiceModule { }
+export class ReactiveServiceModule { }

@@ -11,14 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
 import { NgxsStoreModule } from './ngxs-store/ngxs-store.module';
-import { ReactiveDataServiceModule } from './reactive-data-service/reactive-data-service.module';
+import { ReactiveServiceModule } from './reactive-service/reactive-service.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveDataServiceModule,
+    ReactiveServiceModule,
     NgxsStoreModule,
     NgxsDataModule,
     NgxsModule.forRoot([], {

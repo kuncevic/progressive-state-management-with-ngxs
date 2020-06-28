@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ChildComponent } from './message.component';
+import { ReactiveServiceComponent } from './reactive-service.component';
 
 
-describe('ChildComponent', () => {
-  let component: ChildComponent;
-  let fixture: ComponentFixture<ChildComponent>;
+describe('ReactiveServiceComponent', () => {
+  let component: ReactiveServiceComponent;
+  let fixture: ComponentFixture<ReactiveServiceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChildComponent ]
+      declarations: [ ReactiveServiceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChildComponent);
+    fixture = TestBed.createComponent(ReactiveServiceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
