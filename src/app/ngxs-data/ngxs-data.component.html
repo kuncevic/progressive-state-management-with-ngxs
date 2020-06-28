@@ -1,3 +1,12 @@
 [TODO]
 <app-parent></app-parent>
 <button (click)="counter.resetCounter()">Reset</button>
+
+
+<div class="wrapper">
+  <div class="title">
+    [NGXS Data 🛰] Container 🌳
+  </div>
+  <app-parent></app-parent>
+  <button (click)="resetCounter()">Reset</button><span class="value">{{ counter.snapshot.sum }}</span>
+</div>
