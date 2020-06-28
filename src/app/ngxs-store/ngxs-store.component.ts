@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 import { ResetCounter } from './state/actions';
+import { CounterQueries } from './state/counter.queries';
 
 @Component({
   selector: 'app-ngxs',
   templateUrl: './ngxs-store.component.html',
-  styleUrls: ['./ngxs-store.component.scss']
+  styleUrls: ['./ngxs-store.component.scss'],
 })
 export class NgxsComponent implements OnInit {
+  @Select(CounterQueries.summary) value$: Observable<number>;
+  constructor(private store: Store) {}
 
-  constructor(private store: Store) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   resetCounter(): void {
     this.store.dispatch(new ResetCounter());
   }
-
 }

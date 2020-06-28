@@ -1,29 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { AdjustCounter } from '../state/actions';
-import { CounterState } from '../state/counter.state';
+import { Summarize, UpdateValue1 } from '../state/actions';
+import { CounterQueries } from '../state/counter.queries';
 
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.scss']
+  styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
+  @Select(CounterQueries.value1) value$: Observable<number>;
 
-  @Select(CounterState.count) count$: Observable<number>;
+  constructor(private store: Store) {}
 
-  constructor(private store: Store) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.count$.subscribe(() => {
-      console.log(0)
-    })
+  updateValue(value: number): void {
+    this.store.dispatch(new UpdateValue1(value));
+    this.store.dispatch(new Summarize());
   }
-
-  setCounter(value: number): void {
-    this.store.dispatch(new AdjustCounter(value));
-  }
-
 }

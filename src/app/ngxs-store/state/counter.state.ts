@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Action, Selector, State, StateContext } from '@ngxs/store';
-import { AdjustCounter, ResetCounter } from './actions';
+import { Action, State, StateContext } from '@ngxs/store';
+import { patch } from '@ngxs/store/operators';
+import { ResetCounter, Summarize, UpdateValue1, UpdateValue2, UpdateValue3 } from './actions';
 
 export interface Counter {
-  number: number;
-  //number2: number;
+  value1: number;
+  value2: number;
+  value3: number;
+  sum: number;
 }
 
-const initialState: Counter = { number: 0 };
+const initialState: Counter = { sum: 0, value1: 0, value2: 0, value3: 0 };
 
 @State<Counter>({
   name: 'counter',
@@ -15,29 +18,31 @@ const initialState: Counter = { number: 0 };
 })
 @Injectable()
 export class CounterState {
-  @Selector()
-  public static count(counter: Counter): number {
-    return counter.number;
+
+  @Action(Summarize)
+  summarize(ctx: StateContext<Counter>): void {
+    ctx.setState({
+      sum:
+        ctx.getState().value1 + ctx.getState().value2 + ctx.getState().value3,
+      value1: ctx.getState().value1,
+      value2: ctx.getState().value2,
+      value3: ctx.getState().value3,
+    });
   }
 
-  // @Selector()
-  // public static count2(counter: Counter): number {
-  //   return counter.number2;
-  // }
+  @Action(UpdateValue1)
+  updateValue1(ctx: StateContext<Counter>, { amount }: UpdateValue1): void {
+    ctx.setState( patch({ value1: ctx.getState().value1 + amount }));
+  }
 
-  // @Selector([CounterState.count])
-  // public static anything(value: number): number {
-  //   return isOdd(value);
-  // }
+  @Action(UpdateValue2)
+  updateValue2(ctx: StateContext<Counter>, { amount }: UpdateValue2): void {
+    ctx.setState(patch({ value2: ctx.getState().value2 + amount }));
+  }
 
-  // @Selector([CounterState.count2])
-  // public static anything2(value: number): number {
-  //   return isOdd(value);
-  // }
-
-  @Action(AdjustCounter)
-  adjustCounter(ctx: StateContext<Counter>, { amount }: AdjustCounter): void {
-    ctx.setState((state) => ({ number: state.number + amount }));
+  @Action(UpdateValue3)
+  updateValue3(ctx: StateContext<Counter>, { amount }: UpdateValue3): void {
+    ctx.setState(patch({ value3: ctx.getState().value3 + amount }));
   }
 
   @Action(ResetCounter)
