@@ -15,7 +15,7 @@ export class ReactiveServiceComponent implements OnInit {
     this.sum$ = this.counterStore.state$.pipe(map((x) => x.sum));
   }
 
-  resetMessage(): void {
+  reset(): void {
     this.counterStore.reset();
   }
 }
