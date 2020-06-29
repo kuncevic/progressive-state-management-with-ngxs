@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { DataAction, StateRepository } from '@ngxs-labs/data/decorators';
+import { Computed, DataAction, Payload, StateRepository } from '@ngxs-labs/data/decorators';
 import { NgxsDataRepository } from '@ngxs-labs/data/repositories';
 import { State } from '@ngxs/store';
-import { patch } from '@ngxs/store/operators';
 
 export interface Counter {
   value1: number;
@@ -10,29 +9,32 @@ export interface Counter {
   value3: number;
 }
 
-const initialState: Counter = { value1: 0, value2: 0, value3: 0 };
-
 @StateRepository()
 @State<Counter>({
-  name: 'counter',
-  defaults: initialState,
+  name: 'counterData',
+  defaults: { value1: 0, value2: 0, value3: 0 }
 })
 @Injectable()
 export class CounterDataState extends NgxsDataRepository<Counter> {
-  @DataAction()
-  public updateValue1(value1): void {
-    this.setState(patch({ value1: this.getState().value1 + value1 }));
+
+  @Computed()
+  public get sum(): number {
+    return this.snapshot.value1 + this.snapshot.value2 + this.snapshot.value3;
   }
+
   @DataAction()
-  public updateValue2(value2: number): void {
-    this.setState(patch({ value2: this.getState().value2 + value2 }));
+  public updateValue1(@Payload('value1') value1): void {
+    this.ctx.setState((state) => ({ ...state,  value1: state.value1 + value1 }));
   }
+
   @DataAction()
-  public updateValue3(value3: number): void {
-    this.setState(patch({ value3: this.getState().value3 + value3 }));
+  public updateValue2(@Payload('value2') value2: number): void {
+    this.ctx.setState((state) => ({ ...state,  value2: state.value2 + value2 }));
   }
+
   @DataAction()
-  resetCounter(): void {
-    this.ctx.setState(initialState);
+  public updateValue3(@Payload('value3') value3: number): void {
+    this.ctx.setState((state) => ({ ...state,  value3: state.value3 + value3 }));
   }
+
 }

@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsDataPluginModule } from '@ngxs-labs/data';
-import {
-  NGXS_DATA_STORAGE_CONTAINER,
-  NGXS_DATA_STORAGE_EXTENSION
-} from '@ngxs-labs/data/storage';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
 import { NgxsStoreModule } from './ngxs-store/ngxs-store.module';
 import { ReactiveServiceModule } from './reactive-service/reactive-service.module';
+import { NgxsLoggerPluginModule } from "@ngxs/logger-plugin";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,10 +22,8 @@ import { ReactiveServiceModule } from './reactive-service/reactive-service.modul
       developmentMode: !environment.production,
       selectorOptions: { injectContainerState: false },
     }),
-    NgxsDataPluginModule.forRoot([
-      NGXS_DATA_STORAGE_EXTENSION,
-      NGXS_DATA_STORAGE_CONTAINER,
-    ]),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsDataPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

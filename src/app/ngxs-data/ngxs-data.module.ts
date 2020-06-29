@@ -18,7 +18,7 @@ import { CounterDataState } from './state/counter.state';
   ],
   imports: [
     CommonModule,
-    NgxsModule.forRoot([CounterDataState]),
+    NgxsModule.forFeature([CounterDataState]),
   ],
 })
 export class NgxsDataModule {}
