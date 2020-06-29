@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CounterDataState } from '../state/counter.state';
 
 @Component({
@@ -6,10 +6,7 @@ import { CounterDataState } from '../state/counter.state';
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
 })
-export class ChildComponent implements OnInit {
-  constructor(public counter: CounterDataState) {}
-
-  ngOnInit(): void {}
-
-  setCounter(value: number): void {}
+export class ChildComponent {
+  constructor(public counter: CounterDataState) {
+  }
 }

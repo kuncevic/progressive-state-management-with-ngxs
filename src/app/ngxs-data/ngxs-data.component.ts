@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CounterDataState } from './state/counter.state';
 
 @Component({
@@ -6,10 +6,7 @@ import { CounterDataState } from './state/counter.state';
   templateUrl: './ngxs-data.component.html',
   styleUrls: ['./ngxs-data.component.scss'],
 })
-export class NgxsDataComponent implements OnInit {
-  constructor(public counter: CounterDataState) {}
-
-  ngOnInit(): void {}
-
-  resetCounter(): void {}
+export class NgxsDataComponent {
+  constructor(public counter: CounterDataState) {
+  }
 }
