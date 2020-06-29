@@ -5,7 +5,7 @@ import { ChildComponent } from './child/child.component';
 import { LittleChildComponent } from './little-child/little-child.component';
 import { NgxsDataComponent } from './ngxs-data.component';
 import { ParentComponent } from './parent/parent.component';
-import { CounterState } from './state/counter.state';
+import { CounterDataState } from './state/counter.state';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { CounterState } from './state/counter.state';
   ],
   imports: [
     CommonModule,
-    NgxsModule.forRoot([CounterState]),
+    NgxsModule.forRoot([CounterDataState]),
   ],
 })
 export class NgxsDataModule {}

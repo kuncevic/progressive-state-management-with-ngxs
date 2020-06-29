@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterState } from '../state/counter.state';
+import { CounterDataState } from '../state/counter.state';
 
 @Component({
   selector: 'app-child',
@@ -7,7 +7,7 @@ import { CounterState } from '../state/counter.state';
   styleUrls: ['./child.component.scss'],
 })
 export class ChildComponent implements OnInit {
-  constructor(public counter: CounterState) {}
+  constructor(public counter: CounterDataState) {}
 
   ngOnInit(): void {}
 

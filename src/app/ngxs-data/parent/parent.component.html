@@ -4,9 +4,9 @@
     </div>
     <div class="content">
       <div class="action">
-        <button (click)="counter.setValue1(-1)">-1</button>
+        <button (click)="counter.updateValue1(-1)">-1</button>
         <span class="value"> {{ counter.snapshot.value1 }}</span>
-        <button (click)="counter.setValue1(1)">+1</button>
+        <button (click)="counter.updateValue1(1)">+1</button>
       </div>
     </div>
     <app-child></app-child>
