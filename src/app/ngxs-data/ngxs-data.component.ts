@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterState } from './state/counter.state';
+import { CounterDataState } from './state/counter.state';
 
 @Component({
   selector: 'app-ngxs-data',
@@ -7,7 +7,7 @@ import { CounterState } from './state/counter.state';
   styleUrls: ['./ngxs-data.component.scss'],
 })
 export class NgxsDataComponent implements OnInit {
-  constructor(public counter: CounterState) {}
+  constructor(public counter: CounterDataState) {}
 
   ngOnInit(): void {}
 
