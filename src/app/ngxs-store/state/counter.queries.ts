@@ -2,14 +2,10 @@ import { Selector } from '@ngxs/store';
 import { Counter, CounterState } from './counter.state';
 
 export class CounterQueries {
-  @Selector([CounterState])
-  public static count(counter: Counter): number {
-    return counter.value1;
-  }
 
   @Selector([CounterState])
-  public static summary(counter: Counter): number {
-    return counter.sum;
+  public static sum(counter: Counter): number {
+    return counter.value1 + counter.value2 + counter.value3;
   }
 
   @Selector([CounterState])

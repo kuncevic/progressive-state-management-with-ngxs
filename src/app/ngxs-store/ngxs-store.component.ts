@@ -10,7 +10,7 @@ import { CounterQueries } from './state/counter.queries';
   styleUrls: ['./ngxs-store.component.scss'],
 })
 export class NgxsComponent implements OnInit {
-  @Select(CounterQueries.summary) value$: Observable<number>;
+  @Select(CounterQueries.sum) value$: Observable<number>;
   constructor(private store: Store) {}
 
   ngOnInit(): void {}

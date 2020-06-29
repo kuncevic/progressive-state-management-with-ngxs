@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Summarize, UpdateValue3 } from '../state/actions';
+import { UpdateValue3 } from '../state/actions';
 import { CounterQueries } from '../state/counter.queries';
 
 @Component({
@@ -19,6 +19,5 @@ export class LittleChildComponent implements OnInit {
 
   updateValue(value): void {
     this.store.dispatch(new UpdateValue3(value));
-    this.store.dispatch(new Summarize());
   }
 }
