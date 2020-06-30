@@ -15,7 +15,7 @@ export class ParentComponent implements OnInit {
     this.value$ = this.counterStore.state$.pipe(map((x) => x.value1));
   }
 
-  updateValue(value): void {
+  updateValue(value: number): void {
     this.counterStore.setValue1(value);
   }
 }
