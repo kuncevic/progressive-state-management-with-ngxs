@@ -15,10 +15,7 @@ export class LittleChildComponent implements OnInit {
     this.value$ = this.counterStore.state$.pipe(map((x) => x.value3));
   }
 
-  increaseValue(value): void {
-    this.counterStore.setValue3(value);
-  }
-  decreaseValue(value): void {
+  updateValue(value): void {
     this.counterStore.setValue3(value);
   }
 }

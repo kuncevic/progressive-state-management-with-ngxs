@@ -5,9 +5,9 @@
   <div class="content">
 
       <div class="action">
-        <button (click)="increaseValue(-1)">-1</button>
+        <button (click)="updateValue(-1)">-1</button>
         <span class="value"> {{ value$ | async }}</span>
-        <button (click)="decreaseValue(1)">+1</button>
+        <button (click)="updateValue(1)">+1</button>
     </div>
   </div>
   <app-child></app-child>
