@@ -18,56 +18,53 @@ export class CounterStore extends ReactiveStore<Counter> {
     super(initialState);
   }
 
-  public calculate(value1: number, value2: number, value3: number): void {
-    this.setState({
-      sum: value1 + value2 + value3,
-      value1: this.getState().value1,
-      value2: this.getState().value2,
-      value3: this.getState().value3,
-    });
-  }
-
-  public calculate2(): void {
+  public sum(): void {
+    const state = this.getState();
     this.setState({
       sum:
-        this.getState().value1 +
-        this.getState().value2 +
-        this.getState().value3,
-      value1: this.getState().value1,
-      value2: this.getState().value2,
-      value3: this.getState().value3,
+        state.value1 +
+        state.value2 +
+        state.value3,
+      value1: state.value1,
+      value2: state.value2,
+      value3: state.value3,
     });
   }
 
   public setValue1(value1): void {
+    const state = this.getState();
     this.setState({
-      sum: this.getState().sum,
-      value1: this.getState().value1 + value1,
-      value2: this.getState().value2,
-      value3: this.getState().value3,
+      sum: state.sum,
+      value1: state.value1 + value1,
+      value2: state.value2,
+      value3: state.value3,
     });
 
-    this.calculate2();
+    this.sum();
   }
 
   public setValue2(value2: number): void {
+    const state = this.getState();
     this.setState({
-      sum: this.getState().sum,
-      value1: this.getState().value1,
-      value2: this.getState().value2 + value2,
-      value3: this.getState().value3,
+      sum: state.sum,
+      value1: state.value1,
+      value2: state.value2 + value2,
+      value3: state.value3,
     });
-    this.calculate2();
+
+    this.sum();
   }
 
   public setValue3(value3: number): void {
+    const state = this.getState();
     this.setState({
-      sum: this.getState().sum,
-      value1: this.getState().value1,
-      value2: this.getState().value2,
-      value3: this.getState().value3 + value3,
+      sum: state.sum,
+      value1: state.value1,
+      value2: state.value2,
+      value3: state.value3 + value3,
     });
-    this.calculate2();
+
+    this.sum();
   }
 
   public reset(): void {
