@@ -9,6 +9,7 @@ import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
 import { NgxsStoreModule } from './ngxs-store/ngxs-store.module';
 import { ReactiveServiceModule } from './reactive-service/reactive-service.module';
 import { NgxsLoggerPluginModule } from "@ngxs/logger-plugin";
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +23,9 @@ import { NgxsLoggerPluginModule } from "@ngxs/logger-plugin";
       developmentMode: !environment.production,
       selectorOptions: { injectContainerState: false },
     }),
-    NgxsLoggerPluginModule.forRoot(),
     NgxsDataPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
