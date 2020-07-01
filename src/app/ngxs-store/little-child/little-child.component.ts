@@ -13,9 +13,7 @@ export class LittleChildComponent implements OnInit {
   @Select(CounterQueries.value3) value$: Observable<number>;
   constructor(private store: Store) {}
 
-  ngOnInit(): void {
-    //this.value$ = this.counterStore.state$.pipe(map((x) => x.value3));
-  }
+  ngOnInit(): void {}
 
   updateValue(value): void {
     this.store.dispatch(new UpdateValue3(value));
