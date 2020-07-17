@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CounterStore } from './services/store.service';
 
@@ -9,11 +10,11 @@ import { CounterStore } from './services/store.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReactiveServiceComponent implements OnInit {
-  sum$;
+  sum$: Observable<number>;
   constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {
-    this.sum$ = this.counterStore.state$.pipe(map((x) => x.sum));
+    this.sum$ = this.counterStore.state$.pipe(map((x) => x.value1 + x.value2 + x.value3));
   }
 
   reset(): void {
