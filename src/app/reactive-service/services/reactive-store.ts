@@ -1,21 +1,21 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export abstract class ReactiveStore<T> {
-  private _state$: BehaviorSubject<T>;
+  private localState$: BehaviorSubject<T>;
 
   protected constructor(defaults: T) {
-    this._state$ = new BehaviorSubject(defaults);
+    this.localState$ = new BehaviorSubject(defaults);
   }
 
   public get state$(): Observable<T> {
-    return this._state$.asObservable();
+    return this.localState$.asObservable();
   }
 
-  public setState(nextState: T): void {
-    this._state$.next(nextState);
+  public setState(state: Partial<T>): void {
+    this.localState$.next({ ...this.getState(), ...state });
   }
 
   public getState(): T {
-    return this._state$.getValue();
+    return this.localState$.getValue();
   }
 }

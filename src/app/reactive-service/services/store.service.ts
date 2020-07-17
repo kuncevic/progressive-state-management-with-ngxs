@@ -20,49 +20,26 @@ export class CounterStore extends ReactiveStore<Counter> {
 
   public sum(): void {
     const state = this.getState();
-    this.setState({
-      sum:
-        state.value1 +
-        state.value2 +
-        state.value3,
-      value1: state.value1,
-      value2: state.value2,
-      value3: state.value3,
-    });
+    this.setState({ sum: state.value1 + state.value2 + state.value3 });
   }
 
   public setValue1(value1): void {
     const state = this.getState();
-    this.setState({
-      sum: state.sum,
-      value1: state.value1 + value1,
-      value2: state.value2,
-      value3: state.value3,
-    });
+    this.setState({ value1: state.value1 + value1 });
 
     this.sum();
   }
 
   public setValue2(value2: number): void {
     const state = this.getState();
-    this.setState({
-      sum: state.sum,
-      value1: state.value1,
-      value2: state.value2 + value2,
-      value3: state.value3,
-    });
+    this.setState({ value2: state.value2 + value2 });
 
     this.sum();
   }
 
   public setValue3(value3: number): void {
     const state = this.getState();
-    this.setState({
-      sum: state.sum,
-      value1: state.value1,
-      value2: state.value2,
-      value3: state.value3 + value3,
-    });
+    this.setState({ value3: state.value3 + value3 });
 
     this.sum();
   }
