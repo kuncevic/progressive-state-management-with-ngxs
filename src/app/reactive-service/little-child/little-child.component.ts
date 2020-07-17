@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CounterStore } from '../services/store.service';
 
@@ -6,9 +7,10 @@ import { CounterStore } from '../services/store.service';
   selector: 'app-little-child',
   templateUrl: './little-child.component.html',
   styleUrls: ['./little-child.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LittleChildComponent implements OnInit {
-  value$;
+  value$: Observable<number>;
   constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {

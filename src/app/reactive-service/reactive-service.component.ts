@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CounterStore } from './services/store.service';
 
@@ -6,6 +6,7 @@ import { CounterStore } from './services/store.service';
   selector: 'app-reactive-service',
   templateUrl: './reactive-service.component.html',
   styleUrls: ['./reactive-service.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReactiveServiceComponent implements OnInit {
   sum$;

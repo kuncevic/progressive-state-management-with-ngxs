@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { UpdateValue2 } from '../state/actions';
@@ -8,6 +8,7 @@ import { CounterQueries } from '../state/counter.queries';
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChildComponent implements OnInit {
   @Select(CounterQueries.value2) value$: Observable<number>;

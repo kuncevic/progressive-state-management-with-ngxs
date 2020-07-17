@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CounterStore } from '../services/store.service';
 
@@ -8,7 +9,7 @@ import { CounterStore } from '../services/store.service';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
-  value$;
+  value$: Observable<number>;
   constructor(private counterStore: CounterStore) {}
 
   ngOnInit(): void {
