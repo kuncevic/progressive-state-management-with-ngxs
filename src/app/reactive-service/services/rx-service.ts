@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 
-export abstract class ReactiveStore<T> {
+export abstract class RxService<T> {
   private localState$: BehaviorSubject<T>;
 
   protected constructor(defaults: T) {

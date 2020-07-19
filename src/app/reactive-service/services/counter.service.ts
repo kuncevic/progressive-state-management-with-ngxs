@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReactiveStore } from './reactive-store';
+import { RxService } from './rx-service';
 
 interface Counter {
   value1: number;
@@ -12,7 +12,7 @@ const initialState: Counter = { value1: 0, value2: 0, value3: 0 };
 @Injectable({
   providedIn: 'root',
 })
-export class CounterStore extends ReactiveStore<Counter> {
+export class CounterService extends RxService<Counter> {
   constructor() {
     super(initialState);
   }
