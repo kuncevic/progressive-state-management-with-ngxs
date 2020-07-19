@@ -7067,6 +7067,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rx-service@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/rx-service/-/rx-service-0.0.6.tgz#999d0ae166018658251f6c3227e0f4e57306716f"
+  integrity sha512-jqIPImlkZzMKn+sPBxjDWvxrJR82Lqy6HSTCUUOCvh8m7KbAAORyyMiFMhn9ME9FqsnJy3HKWWF8e+TFM7gAmA==
+  dependencies:
+    tslib "^2.0.0"
+
 rxjs@6.5.4:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz#e0777fe0d184cec7872df147f303572d414e211c"
@@ -8087,6 +8094,11 @@ tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+
+tslib@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
+  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
 tslint@~6.1.0:
   version "6.1.2"

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RxService } from './rx-service';
+import { RxService } from 'rx-service';
 
 interface Counter {
   value1: number;
