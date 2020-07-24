@@ -1,13 +1,13 @@
 <div class="wrapper">
-    <div class="title">
-      Parent 👨
-    </div>
-    <div class="content">
-      <div class="action">
-        <button (click)="counter.updateValue1(-1)">-1</button>
-        <span class="value"> {{ counter.snapshot.value1 }}</span>
-        <button (click)="counter.updateValue1(1)">+1</button>
-      </div>
-    </div>
-    <app-child></app-child>
+  <div class="title">
+    Parent 👨
   </div>
+  <div class="content">
+    <div class="action">
+      <button (click)="counter.updateValue1(-1)">-1</button>
+      <span class="value"> {{ counter.snapshot.value1 }}</span>
+      <button (click)="counter.updateValue1(1)">+1</button>
+    </div>
+  </div>
+  <app-child></app-child>
+</div>
