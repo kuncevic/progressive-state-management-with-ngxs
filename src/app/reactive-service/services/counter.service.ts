@@ -18,21 +18,14 @@ export class CounterService extends RxService<Counter> {
   }
 
   public setValue1(value1): void {
-    const state = this.getState();
-    this.setState({ value1: state.value1 + value1 });
+    this.setState((state) => ({ ...state, value1: state.value1 + value1 }));
   }
 
   public setValue2(value2: number): void {
-    const state = this.getState();
-    this.setState({ value2: state.value2 + value2 });
+    this.setState((state) => ({ ...state, value2: state.value2 + value2 }));
   }
 
   public setValue3(value3: number): void {
-    const state = this.getState();
-    this.setState({ value3: state.value3 + value3 });
-  }
-
-  public reset(): void {
-    this.setState(initialState);
+    this.setState((state) => ({ ...state, value3: state.value3 + value3 }));
   }
 }
