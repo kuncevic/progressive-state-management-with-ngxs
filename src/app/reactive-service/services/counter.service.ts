@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RxService } from 'rx-service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 interface Counter {
   value1: number;
@@ -27,5 +29,9 @@ export class CounterService extends RxService<Counter> {
 
   public setValue3(value3: number): void {
     this.setState((state) => ({ ...state, value3: state.value3 + value3 }));
+  }
+
+  public sum(): Observable<number> {
+    return this.state$.pipe(map((x) => x.value1 + x.value2 + x.value3));
   }
 }

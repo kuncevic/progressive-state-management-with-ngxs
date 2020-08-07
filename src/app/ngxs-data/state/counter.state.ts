@@ -9,32 +9,32 @@ export interface Counter {
   value3: number;
 }
 
+const initialState: Counter = { value1: 0, value2: 0, value3: 0 };
+
 @StateRepository()
 @State<Counter>({
   name: 'counterData',
-  defaults: { value1: 0, value2: 0, value3: 0 }
+  defaults: initialState,
 })
 @Injectable()
 export class CounterDataState extends NgxsDataRepository<Counter> {
+  @DataAction()
+  public updateValue1(@Payload('value1') value1): void {
+    this.ctx.setState((state) => ({ ...state, value1: state.value1 + value1 }));
+  }
+
+  @DataAction()
+  public updateValue2(@Payload('value2') value2: number): void {
+    this.ctx.setState((state) => ({ ...state, value2: state.value2 + value2 }));
+  }
+
+  @DataAction()
+  public updateValue3(@Payload('value3') value3: number): void {
+    this.ctx.setState((state) => ({ ...state, value3: state.value3 + value3 }));
+  }
 
   @Computed()
   public get sum(): number {
     return this.snapshot.value1 + this.snapshot.value2 + this.snapshot.value3;
   }
-
-  @DataAction()
-  public updateValue1(@Payload('value1') value1): void {
-    this.ctx.setState((state) => ({ ...state,  value1: state.value1 + value1 }));
-  }
-
-  @DataAction()
-  public updateValue2(@Payload('value2') value2: number): void {
-    this.ctx.setState((state) => ({ ...state,  value2: state.value2 + value2 }));
-  }
-
-  @DataAction()
-  public updateValue3(@Payload('value3') value3: number): void {
-    this.ctx.setState((state) => ({ ...state,  value3: state.value3 + value3 }));
-  }
-
 }
