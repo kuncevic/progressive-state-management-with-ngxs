@@ -17,6 +17,6 @@ export class ReactiveServiceComponent implements OnInit {
   }
 
   reset(): void {
-    this.counterStore.reset();
+    this.counterStore.resetState();
   }
 }
