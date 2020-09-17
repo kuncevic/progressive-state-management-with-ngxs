@@ -7,7 +7,7 @@ import { NgxsModule } from '@ngxs/store';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxsDataModule } from './ngxs-data/ngxs-data.module';
+import { NgxsDataModule } from './ngxs-labs-data/ngxs-labs-data.module';
 import { NgxsStoreModule } from './ngxs-store/ngxs-store.module';
 import { ReactiveServiceModule } from './reactive-service/reactive-service.module';
 
