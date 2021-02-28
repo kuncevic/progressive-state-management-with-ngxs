@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgxsDataComponent } from './ngxs-labs-data.component';
 
 
@@ -6,7 +6,7 @@ describe('NgxsDataComponent', () => {
   let component: NgxsDataComponent;
   let fixture: ComponentFixture<NgxsDataComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NgxsDataComponent ]
     })
