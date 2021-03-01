@@ -1,6 +1,6 @@
 # Progressive State Management by [Aliaksei Kuncevič](https://twitter.com/kuncevic)
 
-### More stuff
+### More stuff about Progressive State Management
 
 🔥 [Blog series](https://dev.to/kuncevic/series/7784)  
 👨‍💻 [Slides](https://speakerdeck.com/kuncevic/progressive-state-management-with-ngxs)  
