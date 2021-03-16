@@ -10,4 +10,6 @@
 `yarn`  
 `npm start`
 
->### If you want to know more Angular tips and tricks join for my [newsletter](https://kuncevic.dev/daily) 🚀
+>### Want to learn more Angular? 
+🎙 [Angular Rocks Podcast](https://angularrocks.com/subscribe)  
+🚀  [Angular Tips and Tricks Newsletter](https://kuncevic.dev/daily)
